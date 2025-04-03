@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Joalheiria Joias Joia</h1>
+        <h2>Faça o cadastro do seu produto!</h2>
+        <form action="ProdutoForm" method="post">
+            <input type="radio" id="login" name="action" value="login" checked>
+            <input type="radio" id="register" name="action" value="register">
+            <input type="radio" id="reset" name="action" value="reset">
+            <div id="inputs">
+                <div>
+                        <label for="nome">Nome do Produto:</label>
+                        <input type="text" id="nome"    placeholder="Insira o nome do produto" autofocus>
+                        <br><br>
+
+                        <label for="desc_produto">Descrição do Produto:</label>
+                        <input type="text" id="desc_produto" placeholder="Insira alguma descrição">
+                        <br><br>
+
+                        <label for="material do produto">Material do Produto:</label>
+                        <input type="text" id="material" placeholder="Insira o Material do produto"> 
+                        <br><br>
+
+                        <label for="preco">Preço:</label>
+                        <input type="number" id="preco" placeholder="Insira o preço do produto">
+                        <br><br>
+
+                        <label for="quant_estoque">Quantidade em Estoque:</label>
+                        <input type="number" id="quant_estoque" placeholder="Insira a quantia de produtos">
+                        <br><br>
+
+                        <label for="categoria_produto">Categoria:</label>
+                        <select id="categoria_produto" name="categoria_produto">
+                            <option value="colar">Colar</option>
+                            <option value="pulseira">Pulseira</option>
+                            <option value="anel">Anel</option>
+                            <option value="aliança">Aliança</option>
+                            <option value="outros">Outros</option>
+                        </select><br><br>
+
+                        <label for="img_produto">Imagem do Produto:</label>
+                        <input type="file" id="img_produto" name="img_produto"><br><br>
+						
+						<label for="categoria_produto">Categoria:</label>
+						            <select id="categoria_produto" name="categoria_produto" required>
+						                <option value="">Selecione uma categoria</option>
+						                <option value="1">Anéis</option>
+						                <option value="2">Colares</option>
+						                <option value="3">Pulseiras</option>
+						                <option value="4">Brincos</option>
+						            </select>
+									
+									
+									<label for="tipo_produto">Tipo:</label>
+									            <select id="tipo_produto" name="tipo_produto" required>
+									                <option value="">Selecione um tipo</option>
+									                <option value="1">Ouro</option>
+									                <option value="2">Prata</option>
+									                <option value="3">Bijuteria</option>
+									            </select>
+									
+						
+                        <input class="pipa-physca" type="submit" value="Cadastrar Produto">
+                        <br><br>
+                </div>
+            </div>
+    </div>
+
+    <div id="labels">
+
+</body>
+
+</html>
