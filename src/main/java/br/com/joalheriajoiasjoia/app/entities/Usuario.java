@@ -29,6 +29,9 @@ public class Usuario {
 	@Column(name = "email", nullable = false, unique = true, length = 50)
 	private String email;
 	
+	@Column(name = "senha", nullable = false, unique = true)
+	private String senha;
+	
 	@Column(name = "telefone", nullable = false,  unique = false)
 	private String telefone;
 	
@@ -45,31 +48,32 @@ public class Usuario {
 
 	}
 
-	public Usuario(Long id_usuario, String nome_usuario, String cpf, String email, String telefone,
+	public Usuario(Long id_usuario, String nome_usuario, String cpf, String email, String senha, String telefone,
 			LocalDate dt_nascimento, TipoUsuario tipo_usuario) {
 		this.id_usuario = id_usuario;
 		this.nome_usuario = nome_usuario;
 		this.cpf = cpf;
 		this.email = email;
+		this.senha = senha;
 		this.telefone = telefone;
 		this.dt_nascimento = dt_nascimento;
 		this.tipo_usuario = tipo_usuario;
 	}
-	
+
 	//Getters e setters
-	public Long getId_usuario () {
+	public Long getId_usuario() {
 		return id_usuario;
 	}
-	
-	public void setId_usuario (Long id_usuario) {
+
+	public void setId_usuario(Long id_usuario) {
 		this.id_usuario = id_usuario;
 	}
-	
-	public String getNome_usuario () {
+
+	public String getNome_usuario() {
 		return nome_usuario;
 	}
-	
-	public void setNome_usuario (String nome_usuario) {
+
+	public void setNome_usuario(String nome_usuario) {
 		this.nome_usuario = nome_usuario;
 	}
 
@@ -89,6 +93,14 @@ public class Usuario {
 		this.email = email;
 	}
 
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -97,12 +109,12 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public LocalDate getDt_Nascimento() {
+	public LocalDate getDt_nascimento() {
 		return dt_nascimento;
 	}
 
-	public void setDt_Nascimento(LocalDate dt_nascimento) {
-		this.dt_nascimento = dt_nascimento;	
+	public void setDt_nascimento(LocalDate dt_nascimento) {
+		this.dt_nascimento = dt_nascimento;
 	}
 
 	public TipoUsuario getTipo_usuario() {
@@ -112,4 +124,5 @@ public class Usuario {
 	public void setTipo_usuario(TipoUsuario tipo_usuario) {
 		this.tipo_usuario = tipo_usuario;
 	}
+		
 }

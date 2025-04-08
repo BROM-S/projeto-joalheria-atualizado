@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Chique</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Cadastro de Endereço</title>
+    <link rel="stylesheet" href="/css/cadastroEndereco.css">
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Formulário de Endereço</h2>
-        <form id="cadastroendereco">
-            <label for="rua">Rua:</label>
-            <input type="text" id="rua" name="rua" required>
+    <div class="container"> 
+        <br>
+    <h1>Cadastro de Endereço</h1>
+    <form action="/cadastrar_endereco" method="post">
+        
 
-            <label for="número">Número:</label>
-            <input type="tel" id="numero_casa" name="número" required>
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" placeholder="Escreva o nome da rua..." name="rua" required><br><br>
 
-            <label for="bairro">Bairro:</label>
-            <input type="text" id="bairro" name="bairro" required>
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+        <label for="numero">Número:</label>
+        <input type="text" id="numero_casa" placeholder="Escreva o numero da casa..." name="numero" required><br><br>
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" placeholder="escreva o bairro do cadastro..." required><br><br>
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" placeholder="escreva a cidade do cadastro..." required><br><br>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" placeholder="Escreva o estado que você mora..." name="estado" required><br><br>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" placeholder="escreva o cep para cadastro..." name="cep" required><br><br>
+
+        <label for="cep">Complemento:</label>:</label>
+        <input type="text" id="complemento" pSlaceholder="escreva o Complemento para cadastro..." name="cep" required><br><br>
+
+        <a href="/enviado.html" class="btn" id="botaoCadastrar">Cadastrar</a>
+    </form>
+</div>
+
+<script src="scriptEndereco.js"></script>
+
 </body>
 </html>
+
+

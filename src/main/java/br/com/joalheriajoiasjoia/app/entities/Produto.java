@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,6 +15,7 @@ public class Produto {
 	
 	//Atributos
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_produto")
 	private Long id_produto;
 	
@@ -33,11 +36,11 @@ public class Produto {
 
 	@ManyToOne
 	@JoinColumn(name = "categoria_produto", nullable = false)
-	private CategoriaProduto categoriaProduto;
+	private CategoriaProduto categoria_produto;
 	
 	@ManyToOne
 	@JoinColumn(name = "tipo_produto", nullable = false)
-	private TipoProduto tipoProduto;
+	private TipoProduto tipo_produto;
 	
 	@ManyToOne
 	@JoinColumn(name = "ornamento", nullable = false)
@@ -49,17 +52,19 @@ public class Produto {
 		
 	}
 	
-	public Produto(Long id_produto, String nome, String desc_produto, double preco, int quant_estoque, String cor) {
+	public Produto(Long id_produto, String nome, String desc_produto, double preco, int quant_estoque, String cor, CategoriaProduto categoria_produto, TipoProduto tipo_produto, Ornamento ornamento) {
 		this.id_produto = id_produto;
 		this.nome = nome;
 		this.desc_produto = desc_produto;
 		this.preco = preco;
 		this.quant_estoque = quant_estoque;
 		this.cor = cor;
+		this.categoria_produto = categoria_produto;
+		this.tipo_produto = tipo_produto;
+		this.ornamento = ornamento;
 	}
 
 	//Getters and Setters
-
 	public Long getId_produto() {
 		return id_produto;
 	}
@@ -108,20 +113,20 @@ public class Produto {
 		this.cor = cor;
 	}
 
-	public CategoriaProduto getCategoriaProduto() {
-		return categoriaProduto;
+	public CategoriaProduto getCategoria_produto() {
+		return categoria_produto;
 	}
 
-	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
-		this.categoriaProduto = categoriaProduto;
+	public void setCategoria_produto(CategoriaProduto categoria_produto) {
+		this.categoria_produto = categoria_produto;
 	}
 
-	public TipoProduto getTipoProduto() {
-		return tipoProduto;
+	public TipoProduto getTipo_produto() {
+		return tipo_produto;
 	}
 
-	public void setTipoProduto(TipoProduto tipoProduto) {
-		this.tipoProduto = tipoProduto;
+	public void setTipo_produto(TipoProduto tipo_produto) {
+		this.tipo_produto = tipo_produto;
 	}
 
 	public Ornamento getOrnamento() {
@@ -131,5 +136,6 @@ public class Produto {
 	public void setOrnamento(Ornamento ornamento) {
 		this.ornamento = ornamento;
 	}
+	
 	
 }

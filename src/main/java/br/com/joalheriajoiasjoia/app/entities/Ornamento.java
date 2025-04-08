@@ -13,8 +13,8 @@ public class Ornamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idOrnamento", nullable = false)
-    private Long idOrnamento;
+    @Column(name = "id_ornamento", nullable = false)
+    private Long id_ornamento;
     
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -22,19 +22,19 @@ public class Ornamento {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    public Ornamento(Long idOrnamento, String nome, String descricao) {
+    public Ornamento(Long id_ornamento, String nome, String descricao) {
         super();
-        this.idOrnamento = idOrnamento;
+        this.id_ornamento = id_ornamento;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public Long getIdOrnamento() {
-        return idOrnamento;
+    public Long getId_ornamento() {
+        return id_ornamento;
     }
 
-    public void setIdOrnamento(Long idOrnamento) {
-        this.idOrnamento = idOrnamento;
+    public void setIdOrnamento(Long id_ornamento) {
+        this.id_ornamento = id_ornamento;
     }
 
     public String getNome() {

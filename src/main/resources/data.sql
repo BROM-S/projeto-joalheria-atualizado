@@ -16,3 +16,9 @@ INSERT IGNORE INTO tb_tipo_produto (id_tipo_produto, nome_tipo_produto, descrica
 (1, 'Ouro', '18k'),
 (2, 'Prata', '750'),
 (3, 'Bijuteria', 'É biju mas é de rico');
+
+-- inserindo a tb_ornamento
+INSERT IGNORE INTO tb_ornamento (id_ornamento, descricao, nome) VALUES
+(1, 'Ornamento de ouro com pedras preciosas', 'Anel de Ouro'),
+(2, 'Ornamento de prata com design moderno', 'Brinco de Prata'),
+(3, 'Ornamento com pedras sintéticas', 'Colar de Cristal');

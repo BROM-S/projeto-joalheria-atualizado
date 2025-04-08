@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 					quant_estoque,
 					cor,
 					categoria_produto: {
-					                   id: categoria_produto
+					                   id_produto: categoria_produto
 					               }, 
 					tipo_produto: {
-					                   id: tipo_produto
+					                   id_produto: tipo_produto
 					               }
 				}),
 			});
