@@ -22,6 +22,10 @@ public class Ornamento {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
+    public Ornamento() {
+    	
+    }
+    
     public Ornamento(Long id_ornamento, String nome, String descricao) {
         super();
         this.id_ornamento = id_ornamento;

@@ -23,6 +23,10 @@ public class TipoProduto {
 	@Column(name = "nome_tipo_produto")
 	private String nome_tipo_produto;
 
+	public TipoProduto() {
+		
+	}
+	
 	public TipoProduto(Long id_tipo_produto, String descricao_tipo_produto, String nome_tipo_produto) {
 		super();
 		this.id_tipo_produto = id_tipo_produto;
