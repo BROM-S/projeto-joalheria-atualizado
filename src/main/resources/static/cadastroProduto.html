@@ -3,27 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/estiloProduto.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos</title>
 </head>
 
 <body>
+
+    <div class="container"></div>
     <div id="wrapper">
-        <h1>Joalheiria Joias Joia</h1>
+        <h1>Luxur Jewery</h1>
         <h2>Faça o cadastro do seu produto!</h2>
-        <form action="ProdutoForm" method="post">
-            <input type="radio" id="login" name="action" value="login" checked>
-            <input type="radio" id="register" name="action" value="register">
-            <input type="radio" id="reset" name="action" value="reset">
+        
+        <form class="/cadastrar_produto" method="post">
             <div id="inputs">
                 <div>
                         <label for="nome">Nome do Produto:</label>
                         <input type="text" id="nome"    placeholder="Insira o nome do produto" autofocus>
                         <br><br>
 
-                        <label for="desc_produto">Descrição do Produto:</label>
-                        <input type="text" id="desc_produto" placeholder="Insira alguma descrição">
+                        <label for="descricao">Descrição do Produto:</label>
+                        <input type="text" id="descricao" placeholder="Insira alguma descrição">
                         <br><br>
 
                         <label for="material do produto">Material do Produto:</label>
@@ -34,48 +34,30 @@
                         <input type="number" id="preco" placeholder="Insira o preço do produto">
                         <br><br>
 
-                        <label for="quant_estoque">Quantidade em Estoque:</label>
-                        <input type="number" id="quant_estoque" placeholder="Insira a quantia de produtos">
+                        <label for="quantidade">Quantidade em Estoque:</label>
+                        <input type="number" id="quantidade" placeholder="Insira a quantia de produtos">
                         <br><br>
 
-                        <label for="categoria_produto">Categoria:</label>
-                        <select id="categoria_produto" name="categoria_produto">
-                            <option value="colar">Colar</option>
-                            <option value="pulseira">Pulseira</option>
-                            <option value="anel">Anel</option>
-                            <option value="aliança">Aliança</option>
-                            <option value="outros">Outros</option>
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria" name="categoria">
+                            <option value="">Selecione uma categoria</option>
+                            <option value="1">Colar</option>
+                            <option value="2">Pulseira</option>
+                            <option value="3">Anel</option>
+                            <option value="4">Aliança</option>
+                            <option value="5">Outros</option>
                         </select><br><br>
 
-                        <label for="img_produto">Imagem do Produto:</label>
-                        <input type="file" id="img_produto" name="img_produto"><br><br>
-						
-						<label for="categoria_produto">Categoria:</label>
-						            <select id="categoria_produto" name="categoria_produto" required>
-						                <option value="">Selecione uma categoria</option>
-						                <option value="1">Anéis</option>
-						                <option value="2">Colares</option>
-						                <option value="3">Pulseiras</option>
-						                <option value="4">Brincos</option>
-						            </select>
-									
-									
-									<label for="tipo_produto">Tipo:</label>
-									            <select id="tipo_produto" name="tipo_produto" required>
-									                <option value="">Selecione um tipo</option>
-									                <option value="1">Ouro</option>
-									                <option value="2">Prata</option>
-									                <option value="3">Bijuteria</option>
-									            </select>
-									
-						
-                        <input class="pipa-physca" type="submit" value="Cadastrar Produto">
+                        <label for="imagem">Imagem do Produto:</label>
+                        <input type="file" id="imagem" name="imagem"><br><br>
+                        
+                        <a href="/enviado.html" class="btn" id="botaoCadastrar">Cadastrar</a>
                         <br><br>
                 </div>
             </div>
     </div>
 
-    <div id="labels">
+    <script src="scriptProduto.js"></script>
 
 </body>
 
