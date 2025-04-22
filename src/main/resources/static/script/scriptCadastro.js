@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		try {
 
-			const response = await fetch("http://localhost:8080/cadastroUsuario", {
+			const response = await fetch("http://localhost:8080/cadastroUsuario.html", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 			if (response.ok) {
 				alert("Usuário cadastrado com sucesso!");
-				window.location.href = "http://127.0.0.1:3000/cadastroEndereco.html";
 			} else {
 				console.log('Erro na resposta da API:', response.status, response.statusText);
 				alert("Erro ao cadastrar usuário.");

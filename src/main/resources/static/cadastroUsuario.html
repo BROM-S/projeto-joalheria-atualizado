@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/estiloProduto.css"> <!-- Você pode renomear depois -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Chique</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="./css/estiloCliente.css">
+    <title>Cadastro de Usuário</title>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Formulário de Cadastro</h2>
+
+    <div class="container"></div>
+    <div id="wrapper">
+        <h1>Luxur Jewery</h1>
+        <h2>Faça o cadastro do usuário!</h2>
+        
         <form id="cadastroUsuarioForm">
-            <label for="nome_usuario">Nome:</label>
-            <input type="text" id="nome_usuario" name="nome_usuario" required>
+            <div id="inputs">
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome_usuario" placeholder="Digite o nome completo" required>
+                    <br><br>
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Digite o email do cliente" required>
+                    <br><br>
 
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
+                    <br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" placeholder="Digite o CPF" required>
+                    <br><br>
 
-            <label for="senha">Senha:</label>
-            <input type="text" id="senha" name="senha" required>
+                    <label for="data-nascimento">Data de Nascimento:</label>
+                    <input type="date" id="dt_nascimento" required>
+                    <br><br>
 
-            <label for="dt_nascimento">Data de Nascimento:</label>
-            <input type="date" id="dt_nascimento" name="dt_nascimento" required>
+                    <label for="Senha">Senha:</label>
+                    <input type="text" id="senha" placeholder="Digite uma senha para cadastro">
+                    <br><br>
 
-            <button type="submit">Enviar</button>
-			
-			<script src="script/scriptCadastro.js"></script>
-
+                    <a href="cadastroendereco.html" class="btn" id="botaoCadastrar">Cadastrar</a>
+                    <br><br>
+                </div>
+            </div>
         </form>
     </div>
+
+    <script src="script/scriptCadastro.js"></script> 
+
 </body>
+
 </html>
-
-

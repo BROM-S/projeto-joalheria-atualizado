@@ -29,9 +29,6 @@ document.getElementById("cep").addEventListener("input", async function(){
 	}
 })
 
-/*document.getElementById("EnderecoForm").addEventListener("submit", async function(){
-	event.preventDefault("Erro ao cadastra");*/
-
 document.addEventListener("DOMContentLoaded", () =>{
 	
 	const form = document.getElementById("EnderecoForm");
