@@ -15,7 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("produto-nome").textContent = produto.nomeProduto;
                
                 document.getElementById("produto-descricao").textContent = produto.descricao;
-               
+				
+				document.getElementById("produto-categoria").textContent = produto.categoria;
+				
+				document.getElementById("produto-quantidade").textContent = produto.quantidade;
+				
+				document.getElementById("produto-descricao").textContent = produto.descricao;
+				
+				document.getElementById("produto-material").textContent = produto.material;
+              
                 document.getElementById("produto-preco").textContent = `R$ ${produto.preco.toFixed(2)}`;
             })
             .catch(error => console.error("Erro ao carregar produto:", error));
