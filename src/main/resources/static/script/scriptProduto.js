@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 		const desc_produto = document.getElementById("desc_produto").value;
 		const preco = document.getElementById("preco").value;
 		const quant_estoque = document.getElementById("quant_estoque").value;
-		const cor = document.getElementById("cor").value;
 		const categoria_produto = (document.getElementById("categoria_produto").value);
 		const tipo_produto = (document.getElementById("tipo_produto").value);
+		const ornamento =(document.getElementById("ornamento".value));
 		
 		try {
 			
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 					desc_produto,
 					preco,
 					quant_estoque,
-					cor,
+					ornamento,
 					categoria_produto: {
 					                   id_produto: categoria_produto
 					               }, 

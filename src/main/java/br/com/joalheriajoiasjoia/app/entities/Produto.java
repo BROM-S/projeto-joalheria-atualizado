@@ -30,9 +30,6 @@ public class Produto {
 	
 	@Column(name = "quant_estoque")
 	private int quant_estoque;
-	
-	@Column(name = "cor", nullable = false, length = 20)
-	private String cor;
 
 	@ManyToOne
 	@JoinColumn(name = "categoria_produto", nullable = false)
@@ -52,13 +49,12 @@ public class Produto {
 		
 	}
 	
-	public Produto(Long id_produto, String nome, String desc_produto, double preco, int quant_estoque, String cor, CategoriaProduto categoria_produto, TipoProduto tipo_produto, Ornamento ornamento) {
+	public Produto(Long id_produto, String nome, String desc_produto, double preco, int quant_estoque, CategoriaProduto categoria_produto, TipoProduto tipo_produto, Ornamento ornamento) {
 		this.id_produto = id_produto;
 		this.nome = nome;
 		this.desc_produto = desc_produto;
 		this.preco = preco;
 		this.quant_estoque = quant_estoque;
-		this.cor = cor;
 		this.categoria_produto = categoria_produto;
 		this.tipo_produto = tipo_produto;
 		this.ornamento = ornamento;
@@ -103,14 +99,6 @@ public class Produto {
 
 	public void setQuant_estoque(int quant_estoque) {
 		this.quant_estoque = quant_estoque;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 
 	public CategoriaProduto getCategoria_produto() {
