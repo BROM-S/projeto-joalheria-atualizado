@@ -9,4 +9,6 @@ import br.com.joalheriajoiasjoia.app.entities.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
 	Usuario findByCpf(String cpf);
+	
+	Usuario findByEmail(String email);
 }

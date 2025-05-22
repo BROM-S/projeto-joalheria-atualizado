@@ -64,5 +64,26 @@ public class UsuarioController {
 	public void deleteUsuario(@PathVariable Long id) {
 		usuarioService.deleteUsuario(id);
 	}
+	@PostMapping("/login")
+	public Usuario login(@RequestBody Usuario loginRequest) {
+		//Chama o método de autenticação do service passando o email e senha fornecidos no login
+		//1. loginRequest.getEmail() - obtém o email enviado pelo usuário na requisição
+		//2. loginRequest.getenha() - obtém a senha enviada pelo usuário na requisição
+		//3. usuarioService.autenticarPeessoa(email, senha) verifica no banco se existe um usuário com este email e se a senha é válida
+		//4. retorna o objeto usuário autenticado, ou null caso falhe na autenticação
+		Usuario pessoa = usuarioService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha());
+		
+		//Verifica se o serviço retornou um usuário válido (autenticação bem-sucedida)
+		if(pessoa != null) {
+			//Se autenticado, retorna os dados do usuário
+			return pessoa;
+		}else {
+			//Se não autenticado, retorna null indicando falha no login
+			return null;
+		}
+	
 
 }
+}
+
+
