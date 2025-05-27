@@ -2,6 +2,8 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,6 +41,7 @@ public class Usuario {
 	private LocalDate dt_nascimento;
 
 	@ManyToOne
+	@JsonBackReference
 	@JoinColumn(name = "tipo_usuario", nullable = false)
 	private TipoUsuario tipo_usuario;
 	
