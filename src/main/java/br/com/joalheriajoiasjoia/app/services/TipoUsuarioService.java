@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.joalheriajoiasjoia.app.entities.TipoUsuario;
+import br.com.joalheriajoiasjoia.app.repositories.TipoUsuarioRepository;
 
 @Service
 public class TipoUsuarioService {
@@ -37,4 +38,4 @@ public class TipoUsuarioService {
 
 	}
 
-}
+
