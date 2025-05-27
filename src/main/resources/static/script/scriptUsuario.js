@@ -1,6 +1,10 @@
 // Quando clicar no botão "Cadastrar"
 document.getElementById('formCadastro').addEventListener('submit', function(e) {
 	e.preventDefault();
+	
+	form.addEventListener("submit", async (event) => {
+	        event.preventDefault();
+
 
 	const nome_usuario = document.getElementById('nome_usuario').value;
 	const email = document.getElementById('email').value;
@@ -9,6 +13,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
     const dt_nascimento = document.getElementById('dt_nascimento').value;
     const senha = document.getElementById('senha').value
 
+	try{ 
 	// Enviar para a API
 	fetch('http://localhost:8080/cadastrousuario', {
 		method: 'POST',
@@ -24,24 +29,33 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 
 			})
 	});
+	
+	then(response => {
+		  if (response.ok) {
+	        return response.json();
+		} else {
+	        throw new Error('Erro ao cadastrar usuário');
+	                }
+	 })
+	      .then(data => {
+	                    alert('Usuário cadastrado com sucesso!\nNomeUsuario: ' + data.nome_usuario);
+	                    window.location.href = 'index.html';
+	                })
 
-	document.getElementById('formCadastro').reset();
-	location.reload();
+
+	  if (!response.ok) {
+	      throw new Error('Erro ao cadastrar pessoa');
+	  }
+
+	            const data = await response.json();
+
+	       localStorage.setItem('pessoaId', data.idUsuario); 
+	       window.location.href = './cadastroendereco.html';
+	
+	} catch(error){
+		console.error('Erro no cadastro:', error);
+		            alert('Falha ao cadastrar pessoa. Tente novamente.');
+	}
 
 });
-
-// Quando a página carregar
-window.onload = function() {
-	
-	fetch('http://localhost:8080/cadastrousuario')
-		.then(res => res.json())
-		.then(Jogos => {
-			const tabela = document.getElementById('tabelaJogos').querySelector('tbody');
-			Jogos.forEach(p => {
-				const linha = tabela.insertRow();
-				linha.insertCell(0).textContent = p.nomeJogo;
-				linha.insertCell(1).textContent = p.anoLancamento;
-                linha.insertCell(2).textContent = p.tipoJogo;
-			});
-		});
-};
+})
