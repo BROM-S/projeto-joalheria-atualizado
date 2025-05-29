@@ -29,7 +29,6 @@ public class TipoProduto {
 	private String nome_tipo_produto;
 	
 	@OneToMany(mappedBy= "tipo_produto")
-	@JsonManagedReference
 	private Set<Produto> produtos;
 
 

@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +27,6 @@ public class CategoriaProduto {
 	private String descricao_categoria_produto;
 	
 	@OneToMany(mappedBy = "categoria_produto")
-	@JsonManagedReference
 	private Set<Produto> produtos;
 
 

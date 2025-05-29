@@ -3,6 +3,7 @@ package br.com.joalheriajoiasjoia.app.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,11 +22,11 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoService produtoService;
 
-	@PostMapping
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Produto createProduto(@RequestBody Produto produto) {
-		return produtoService.saveProduto(produto);
+	    return produtoService.saveProduto(produto);
 	}
-
+	
 	@GetMapping
 	public List<Produto> getAllProduto() {
 		return produtoService.getAllProduto();
