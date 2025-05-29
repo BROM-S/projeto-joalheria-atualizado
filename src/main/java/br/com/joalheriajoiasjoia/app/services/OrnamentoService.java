@@ -23,11 +23,11 @@ public class OrnamentoService {
         return OrnamentoRepository.findAll();
     }
     
-    public Ornamento getOrnamentoById (Long id) {
-        return OrnamentoRepository.findById(id).orElse(null);
+    public Ornamento getOrnamentoById (Long id_ornamento) {
+        return OrnamentoRepository.findById(id_ornamento).orElse(null);
     }
     
-    public void deleteOrnamento(Long id) {
-        OrnamentoRepository.deleteById(id);
+    public void deleteOrnamento(Long id_ornamento) {
+        OrnamentoRepository.deleteById(id_ornamento);
     }
 }

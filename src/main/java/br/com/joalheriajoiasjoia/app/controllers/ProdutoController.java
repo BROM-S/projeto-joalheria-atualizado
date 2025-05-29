@@ -31,14 +31,14 @@ public class ProdutoController {
 		return produtoService.getAllProduto();
 	}
 
-	@GetMapping("/{id}")
-	public Produto getProduto(@PathVariable Long id) {
-		return produtoService.getProdutoById(id);
+	@GetMapping("/{id_produto}")
+	public Produto getProduto(@PathVariable Long id_produto) {
+		return produtoService.getProdutoById(id_produto);
 	}
 
-	@DeleteMapping("/{id}")
-	public void deleteProduto(@PathVariable Long id) {
-		produtoService.deleteProduto(id);
+	@DeleteMapping("/{id_produto}")
+	public void deleteProduto(@PathVariable Long id_produto) {
+		produtoService.deleteProduto(id_produto);
 	}
 
 }

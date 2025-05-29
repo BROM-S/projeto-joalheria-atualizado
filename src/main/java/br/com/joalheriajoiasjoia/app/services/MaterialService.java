@@ -23,12 +23,12 @@ public class MaterialService {
         return materialRepository.findAll();
     }
     
-    public Material getMaterialById (Long id) {
-        return materialRepository.findById(id).orElse(null);
+    public Material getMaterialById (Long idMaterial) {
+        return materialRepository.findById(idMaterial).orElse(null);
     }
     
-    public void deleteMaterial(Long id) {
-        materialRepository.deleteById(id);
+    public void deleteMaterial(Long idMaterial) {
+        materialRepository.deleteById(idMaterial);
     }
 
 

@@ -23,20 +23,20 @@ public class UsuarioService {
 		return usuarioRepository.findAll();
 	}
 	
-	public Usuario getUsuarioById (Long id) {
-		return usuarioRepository.findById(id).orElse(null);
+	public Usuario getUsuarioById (Long id_usuario) {
+		return usuarioRepository.findById(id_usuario).orElse(null);
 	}
 	
-	public void deleteUsuario(Long id) {
-		usuarioRepository.deleteById(id);
+	public void deleteUsuario(Long id_usuario) {
+		usuarioRepository.deleteById(id_usuario);
 	}
 
 	 public Usuario buscarUsuarioPorCpf(String cpf) {
 	    	return usuarioRepository.findByCpf(cpf);
 	    }
 	 
-	 public Usuario buscarUsuarioPorId(Long id) {
-	        return usuarioRepository.findById(id).orElse(null);
+	 public Usuario buscarUsuarioPorId(Long id_usuario) {
+	        return usuarioRepository.findById(id_usuario).orElse(null);
 	    }
 	 public Usuario autenticarPessoa(String email, String senha) {
 			

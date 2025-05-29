@@ -39,13 +39,13 @@ public class UsuarioController {
 	}*/
 	
 	@GetMapping("/{id}")
-    public ResponseEntity<Object> buscarUsuarioPorId(@PathVariable Long id){
-		Usuario usuario = usuarioService.buscarUsuarioPorId(id);
+    public ResponseEntity<Object> buscarUsuarioPorId(@PathVariable Long id_usuario){
+		Usuario usuario = usuarioService.buscarUsuarioPorId(id_usuario);
     
     	if(usuario != null) {
     		return ResponseEntity.ok(usuario);
     	} else {
-    		return ResponseEntity.status(404).body("Usuário com ID "+id+" não foi encontrado");
+    		return ResponseEntity.status(404).body("Usuário com ID "+id_usuario+" não foi encontrado");
     	}
     
     }
@@ -60,9 +60,9 @@ public class UsuarioController {
 		return usuarioService.saveUsuario(usuario);
 	}
 
-	@DeleteMapping("/{id}")
-	public void deleteUsuario(@PathVariable Long id) {
-		usuarioService.deleteUsuario(id);
+	@DeleteMapping("/{id_usuario}")
+	public void deleteUsuario(@PathVariable Long id_usuario) {
+		usuarioService.deleteUsuario(id_usuario);
 	}
 	@PostMapping("/login")
 	public Usuario login(@RequestBody Usuario loginRequest) {

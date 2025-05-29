@@ -24,13 +24,13 @@ public class ProdutoService {
 	}
 
 	// Buscar Produto por ID
-	public Produto getProdutoById(Long id) {
-		return produtoRepository.findById(id).orElse(null);
+	public Produto getProdutoById(Long id_produto) {
+		return produtoRepository.findById(id_produto).orElse(null);
 	}
 
 	// Deletar Produto
-	public void deleteProduto(Long id) {
-		produtoRepository.deleteById(id);
+	public void deleteProduto(Long id_produto) {
+		produtoRepository.deleteById(id_produto);
 	}
 
 }

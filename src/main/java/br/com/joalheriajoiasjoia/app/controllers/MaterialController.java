@@ -33,17 +33,17 @@ public class MaterialController {
         return materialService.getAllMaterial();
     }
     
-    @GetMapping("/{id}")
-    public Material getMaterial(@PathVariable Long id) {
-        return materialService.getMaterialById(id);
+    @GetMapping("/{idMaterial}")
+    public Material getMaterial(@PathVariable Long idMaterial) {
+        return materialService.getMaterialById(idMaterial);
     }
     @PutMapping
     public Material  editMaterial(@RequestBody Material material) {
         return materialService.saveMaterial(material);
     }
-    @DeleteMapping("/{id}")
-    public void deleteMaterial(@PathVariable Long id) {
-        materialService.deleteMaterial(id);
+    @DeleteMapping("/{idMaterial}")
+    public void deleteMaterial(@PathVariable Long idMaterial) {
+        materialService.deleteMaterial(idMaterial);
     }
 
 

@@ -73,14 +73,14 @@ public class TipoUsuarioController {
         return tipoUsuarioService.getAllTipoUsuario();
     }
     
-    @GetMapping("/{id}")
-    public ResponseEntity<Object> buscarTipoUsuarioPorId(@PathVariable Long id){
-        TipoUsuario tipoUsuario = tipoUsuarioService.buscarTipoUsuarioPorId(id);
+    @GetMapping("/{id_tipo_usuario}")
+    public ResponseEntity<Object> buscarTipoUsuarioPorId(@PathVariable Long id_tipo_usuario){
+        TipoUsuario tipoUsuario = tipoUsuarioService.buscarTipoUsuarioPorId(id_tipo_usuario);
     
         if(tipoUsuario != null) {
             return ResponseEntity.ok(tipoUsuario);
         } else {
-            return ResponseEntity.status(404).body("Tipo de Usuário com ID "+id+" não foi encontrada");
+            return ResponseEntity.status(404).body("Tipo de Usuário com ID "+id_tipo_usuario+" não foi encontrada");
         }
     
     }
@@ -90,9 +90,9 @@ public class TipoUsuarioController {
         return tipoUsuarioService.saveTipoUsuario(tipoUsuario);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteTipoUsuario(@PathVariable Long id) {
-        tipoUsuarioService.deleteTipoUsuario(id);
+    @DeleteMapping("/{id_tipo_usuario}")
+    public void deleteTipoUsuario(@PathVariable Long id_tipo_usuario) {
+        tipoUsuarioService.deleteTipoUsuario(id_tipo_usuario);
     }
 
     

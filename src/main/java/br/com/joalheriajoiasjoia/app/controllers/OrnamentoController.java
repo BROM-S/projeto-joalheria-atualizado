@@ -32,17 +32,17 @@ public class OrnamentoController {
         return ornamentoService.getAllOrnamento();
     }
     
-    @GetMapping("/{id}")
-    public Ornamento getOrnamento(@PathVariable Long id) {
-        return ornamentoService.getOrnamentoById(id);
+    @GetMapping("/{id_ornamento}")
+    public Ornamento getOrnamento(@PathVariable Long id_ornamento) {
+        return ornamentoService.getOrnamentoById(id_ornamento);
     }
     @PutMapping
     public Ornamento  editOrnamento(@RequestBody Ornamento ornamento) {
         return ornamentoService.saveOrnamento(ornamento);
     }
-    @DeleteMapping("/{id}")
-    public void deleteOrnamento(@PathVariable Long id) {
-        ornamentoService.deleteOrnamento(id);
+    @DeleteMapping("/{id_ornamento}")
+    public void deleteOrnamento(@PathVariable Long id_ornamento) {
+        ornamentoService.deleteOrnamento(id_ornamento);
     }
 
 

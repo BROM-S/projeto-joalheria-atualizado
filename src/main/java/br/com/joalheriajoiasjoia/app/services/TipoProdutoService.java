@@ -22,16 +22,16 @@ public class TipoProdutoService {
 		return tipoProdutoRepository.findAll();
 	}
 	
-	public TipoProduto getTipoProdutoById (Long id) {
-		return tipoProdutoRepository.findById(id).orElse(null);
+	public TipoProduto getTipoProdutoById (Long id_tipo_produto) {
+		return tipoProdutoRepository.findById(id_tipo_produto).orElse(null);
 	}
 	
-	public void deleteTipoProduto(Long id) {
-		tipoProdutoRepository.deleteById(id);
+	public void deleteTipoProduto(Long id_tipo_produto) {
+		tipoProdutoRepository.deleteById(id_tipo_produto);
 	}
 	 
-	 public TipoProduto buscarTipoProdutoPorId(Long id) {
-	        return tipoProdutoRepository.findById(id).orElse(null);
+	 public TipoProduto buscarTipoProdutoPorId(Long id_tipo_produto) {
+	        return tipoProdutoRepository.findById(id_tipo_produto).orElse(null);
 	    }
 
 

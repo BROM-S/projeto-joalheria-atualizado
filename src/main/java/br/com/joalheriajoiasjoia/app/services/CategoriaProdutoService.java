@@ -22,17 +22,17 @@ public class CategoriaProdutoService {
 		return categoriaProdutoRepository.findAll();
 	}
 	
-	public CategoriaProduto getCategoriaProdutoById (Long id) {
-		return categoriaProdutoRepository.findById(id).orElse(null);
+	public CategoriaProduto getCategoriaProdutoById (Long id_categoria_produto) {
+		return categoriaProdutoRepository.findById(id_categoria_produto).orElse(null);
 	}
 	
-	public void deleteCategoriaProduto(Long id) {
-		categoriaProdutoRepository.deleteById(id);
+	public void deleteCategoriaProduto(Long id_categoria_produto) {
+		categoriaProdutoRepository.deleteById(id_categoria_produto);
 	}
 
 	 
-	 public CategoriaProduto buscarCategoriaProdutoPorId(Long id) {
-	        return categoriaProdutoRepository.findById(id).orElse(null);
+	 public CategoriaProduto buscarCategoriaProdutoPorId(Long id_categoria_produto) {
+	        return categoriaProdutoRepository.findById(id_categoria_produto).orElse(null);
 	    }
 
 

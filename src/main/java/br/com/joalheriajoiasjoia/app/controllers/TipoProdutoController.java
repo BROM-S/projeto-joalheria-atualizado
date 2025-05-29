@@ -33,14 +33,14 @@ public class TipoProdutoController {
 		return tipoProdutoService.getAllTipoProdutos();
 	}
 	
-	@GetMapping("/{id}")
-    public ResponseEntity<Object> buscarTipoProdutoPorId(@PathVariable Long id){
-		TipoProduto tipoProduto = tipoProdutoService.buscarTipoProdutoPorId(id);
+	@GetMapping("/{id_tipo_produto}")
+    public ResponseEntity<Object> buscarTipoProdutoPorId(@PathVariable Long id_tipo_produto){
+		TipoProduto tipoProduto = tipoProdutoService.buscarTipoProdutoPorId(id_tipo_produto);
     
     	if(tipoProduto != null) {
     		return ResponseEntity.ok(tipoProduto);
     	} else {
-    		return ResponseEntity.status(404).body("Tipo de Produto com ID "+id+" não foi encontrada");
+    		return ResponseEntity.status(404).body("Tipo de Produto com ID "+id_tipo_produto+" não foi encontrada");
     	}
     
     }
@@ -50,9 +50,9 @@ public class TipoProdutoController {
 		return tipoProdutoService.saveTipoProduto(tipoProduto);
 	}
 
-	@DeleteMapping("/{id}")
-	public void deleteTipoProduto(@PathVariable Long id) {
-		tipoProdutoService.deleteTipoProduto(id);
+	@DeleteMapping("/{id_tipo_produto}")
+	public void deleteTipoProduto(@PathVariable Long id_tipo_produto) {
+		tipoProdutoService.deleteTipoProduto(id_tipo_produto);
 	}
 
 }
