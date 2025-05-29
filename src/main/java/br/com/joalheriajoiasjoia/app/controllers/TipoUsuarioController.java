@@ -21,6 +21,7 @@ import br.com.joalheriajoiasjoia.app.services.TipoUsuarioService;
 public class TipoUsuarioController {
 
 
+<<<<<<< HEAD
 	@Autowired
 	private TipoUsuarioService tipoUsuarioService;
 
@@ -58,3 +59,42 @@ public class TipoUsuarioController {
 
 	
 }
+=======
+    @Autowired
+    private TipoUsuarioService tipoUsuarioService;
+
+    @PostMapping
+    public TipoUsuario createTipoUsuario(@RequestBody TipoUsuario tipoUsuario) {
+        return tipoUsuarioService.saveTipoUsuario(tipoUsuario);
+    }
+
+    @GetMapping
+    public List<TipoUsuario> getAllTipoUsuarios() {
+        return tipoUsuarioService.getAllTipoUsuario();
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> buscarTipoUsuarioPorId(@PathVariable Long id){
+        TipoUsuario tipoUsuario = tipoUsuarioService.buscarTipoUsuarioPorId(id);
+    
+        if(tipoUsuario != null) {
+            return ResponseEntity.ok(tipoUsuario);
+        } else {
+            return ResponseEntity.status(404).body("Tipo de Usuário com ID "+id+" não foi encontrada");
+        }
+    
+    }
+
+    @PutMapping
+    public TipoUsuario editTipoUsuario(@RequestBody TipoUsuario tipoUsuario) {
+        return tipoUsuarioService.saveTipoUsuario(tipoUsuario);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteTipoUsuario(@PathVariable Long id) {
+        tipoUsuarioService.deleteTipoUsuario(id);
+    }
+
+    
+}
+>>>>>>> 102e282 (todos @JsonManagedReference e @JsonBackReference feitos)
