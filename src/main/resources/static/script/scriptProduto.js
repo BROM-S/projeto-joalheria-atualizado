@@ -1,49 +1,32 @@
-document.addEventListener("DOMContentLoaded", () =>{
-	
-	const form = document.getElementById("ProdutoForm");
-	
-	form.addEventListener("submit", async (event) => {
-		event.preventDefault();
-		
-		const nome = document.getElementById("nome").value;
-		const desc_produto = document.getElementById("desc_produto").value;
-		const preco = document.getElementById("preco").value;
-		const quant_estoque = document.getElementById("quant_estoque").value;
-		const categoria_produto = (document.getElementById("categoria_produto").value);
-		const tipo_produto = (document.getElementById("tipo_produto").value);
-		const ornamento =(document.getElementById("ornamento".value));
-		
-		try {
-			
-			const response = await fetch ("http://localhost:8080/ProdutoForm", {
-				method: "POST",
-				headers:{
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({
-					nome,
-					desc_produto,
-					preco,
-					quant_estoque,
-					ornamento,
-					categoria_produto: {
-					                   id_produto: categoria_produto
-					               }, 
-					tipo_produto: {
-					                   id_produto: tipo_produto
-					               }
-				}),
-			});
-			if (response.ok){
-				alert("Produto cadastrado com sucesso!");
-				window.location.href = "produto.html";
-			}else{
-				alert("Erro ao cadastrar produto.");
-			}
-		} catch (error) {
-			console.error("Erro ao cadastrar o produto:", error)
-		}
-		
-		
-	});
+// Aguarda o carregamento completo do DOM antes de executar o código
+document.addEventListener("DOMContentLoaded", () => {
+   
+    // Obtém os parâmetros da URL (query string)
+    const urlParams = new URLSearchParams(window.location.search);
+   
+    // Captura o valor do parâmetro "id" da URL (correspondente ao produto selecionado)
+    const produtoId = urlParams.get("id");
+   
+    // Verifica se um ID de produto foi passado na URL
+    if (produtoId) {
+       
+        // Faz uma requisição para o backend buscando os detalhes do produto pelo ID
+        fetch(`http://localhost:8080/cadastroproduto/${produtoId}`)
+            .then(response => response.json()) // Converte a resposta para JSON
+            .then(produto => {
+                // Atualiza a imagem do produto
+                document.getElementById("produto-img").src = produto.imgUrl;
+                document.getElementById("produto-img").alt = produto.nomeProduto;
+
+                // Atualiza o nome do produto
+                document.getElementById("produto-nome").textContent = produto.nomeProduto;
+               
+                // Atualiza a descrição do produto
+                document.getElementById("produto-descricao").textContent = produto.descricao;
+               
+                // Atualiza o preço do produto, formatando para duas casas decimais
+                document.getElementById("produto-preco").textContent = R$ ${produto.preco.toFixed(2)};
+            })
+            .catch(error => console.error("Erro ao carregar produto:", error)); // Exibe erro caso a requisição falhe
+    }
 });
