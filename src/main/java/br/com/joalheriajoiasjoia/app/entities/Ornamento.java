@@ -28,7 +28,6 @@ public class Ornamento {
     private String descricao;
     
     @OneToMany(mappedBy= "ornamento")
-	@JsonManagedReference
 	private Set<Produto> produto;
 
 

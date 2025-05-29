@@ -1,6 +1,6 @@
 package br.com.joalheriajoiasjoia.app.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,18 +34,18 @@ public class Produto {
 	private int quant_estoque;
 
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnoreProperties("produto")
 	@JoinColumn(name = "categoria_produto", nullable = false)
 	private CategoriaProduto categoria_produto;
 
 	
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnoreProperties("produto")
 	@JoinColumn(name = "tipo_produto", nullable = false)
 	private TipoProduto tipo_produto;
 	
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnoreProperties("produto")
 	@JoinColumn(name = "ornamento", nullable = false)
 	private Ornamento ornamento;
 	
@@ -90,7 +90,7 @@ public class Produto {
 	public void setDesc_produto(String desc_produto) {
 		this.desc_produto = desc_produto;
 	}
-
+											
 	public double getPreco() {
 		return preco;
 	}
