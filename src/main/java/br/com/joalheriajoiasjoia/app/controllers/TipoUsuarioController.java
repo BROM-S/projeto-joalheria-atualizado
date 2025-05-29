@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.joalheriajoiasjoia.app.entities.TipoUsuario;
+import br.com.joalheriajoiasjoia.app.services.TipoUsuarioService;
 
 @RestController
 @RequestMapping("/tipoUsuario")
@@ -30,17 +31,17 @@ public class TipoUsuarioController {
 
 	@GetMapping
 	public List<TipoUsuario> getAllTipoUsuarios() {
-		return tipoUsuarioService.getAllTipoUsuarios();
+		return tipoUsuarioService.getAllTipoUsuario();
 	}
 	
 	@GetMapping("/{id}")
-    public ResponseEntity<Object> buscarTipoUsuarioPorId(@PathVariable Long id){
-		TipoUsuario tipoUsuario = tipoUsuarioService.buscarTipoProdutoPorId(id);
+    public ResponseEntity<Object> buscarTipoUsuarioPorId(@PathVariable Long id_tipo_usuario){
+		TipoUsuario tipoUsuario = tipoUsuarioService.buscarTipoUsuarioPorId(id_tipo_usuario);
     
     	if(tipoUsuario != null) {
     		return ResponseEntity.ok(tipoUsuario);
     	} else {
-    		return ResponseEntity.status(404).body("Tipo de Usuário com ID "+id+" não foi encontrada");
+    		return ResponseEntity.status(404).body("Tipo de Usuário com ID "+id_tipo_usuario+" não foi encontrada");
     	}
     
     }

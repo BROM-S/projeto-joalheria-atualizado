@@ -15,7 +15,7 @@ public class TipoUsuarioService {
 		@Autowired
 		private TipoUsuarioRepository tipoUsuarioRepository;
 		
-		public TipoUsuario saveTipoProduto( TipoUsuario tipoUsuario) {
+		public TipoUsuario saveTipoUsuario( TipoUsuario tipoUsuario) {
 			return tipoUsuarioRepository.save(tipoUsuario);
 		}
 		
@@ -23,16 +23,16 @@ public class TipoUsuarioService {
 			return tipoUsuarioRepository.findAll();
 		}
 		
-		public TipoUsuario getTipoUsuarioById (Long id) {
-			return tipoUsuarioRepository.findById(id).orElse(null);
+		public TipoUsuario getTipoUsuarioById (Long id_tipo_usuario) {
+			return tipoUsuarioRepository.findById(id_tipo_usuario).orElse(null);
 		}
 		
-		public void deleteTipoUsuario(Long id) {
-			tipoUsuarioRepository.deleteById(id);
+		public void deleteTipoUsuario(Long id_tipo_usuario) {
+			tipoUsuarioRepository.deleteById(id_tipo_usuario);
 		}
 		 
-		 public TipoUsuario buscarTipoUsuarioPorId(Long id) {
-		        return tipoUsuarioRepository.findById(id).orElse(null);
+		 public TipoUsuario buscarTipoUsuarioPorId(Long id_tipo_usuario) {
+		        return tipoUsuarioRepository.findById(id_tipo_usuario).orElse(null);
 		    }
 
 
