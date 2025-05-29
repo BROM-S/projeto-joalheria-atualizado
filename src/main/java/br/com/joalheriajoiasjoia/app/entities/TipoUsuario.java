@@ -25,11 +25,18 @@ public class TipoUsuario {
 	@Column(name = "nome_tipo_usuario")
 	private String nome_tipo_usuario;
 	
+<<<<<<< HEAD
 		
 	@OneToMany(mappedBy= "tipo_usuario")
 	@JsonManagedReference
 	private Set<Usuario> usuario;
 
+=======
+	@OneToMany(mappedBy= "tipo_usuario")
+	@JsonManagedReference
+	private Set<Usuario> usuario;	
+	
+>>>>>>> 8a547b1 (Mudanças implementadas em Usuario e TipoUsuario)
 
 
 	//Construtores
