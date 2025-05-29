@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estiloLogin.css">
     <title>Login</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h2>Login</h2>
         <form action="#" method="post">
             <div>
                 <label for="username">Login:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="Digite o email para login" required>
             </div>
             <div>
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
             </div>
             <button type="submit">Entrar</button>
         </form>
         <a href="cadastroUsuario.html">Não tem uma conta? Cadastre-se</a>
     </div>
-	
-	<script src="./scrip/login.js"></script>
+    <script src="./scrip/login.js"></script>
 </body>
+
 </html>
