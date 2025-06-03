@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () =>{
 	
-	const form = document.getElementById("ProdutoForm");
+	const form = document.getElementById("/cadastrar_produto");
 	
 	form.addEventListener("submit", async (event) => {
 		event.preventDefault();
