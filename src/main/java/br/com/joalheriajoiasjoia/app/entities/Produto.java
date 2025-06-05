@@ -18,31 +18,30 @@ public class Produto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_produto")
-	private Long id_produto;
+	@Column(name = "idProduto")
+	private Long idProduto;
 	
 	@Column(name = "nome", nullable = false, length = 50)
 	private String nome;
 	
-	@Column(name = "desc_produto")
-	private String desc_produto;
+	@Column(name = "descProduto")
+	private String descProduto;
 	
 	@Column(name = "preco", nullable = false)
 	private double preco;
 	
-	@Column(name = "quant_estoque")
-	private int quant_estoque;
+	@Column(name = "quantEstoque")
+	private int quantEstoque;
 
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
-	@JoinColumn(name = "categoria_produto", nullable = false)
-	private CategoriaProduto categoria_produto;
+	@JoinColumn(name = "categoriaProduto", nullable = false)
+	private CategoriaProduto categoriaProduto;
 
-	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
-	@JoinColumn(name = "tipo_produto", nullable = false)
-	private TipoProduto tipo_produto;
+	@JoinColumn(name = "tipoProduto", nullable = false)
+	private TipoProduto tipoProduto;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -51,28 +50,28 @@ public class Produto {
 	
 	
 	//Construtores
-	public Produto(){
+	public Produto() {
 		
 	}
 	
-	public Produto(Long id_produto, String nome, String desc_produto, double preco, int quant_estoque, CategoriaProduto categoria_produto, TipoProduto tipo_produto, Ornamento ornamento) {
-		this.id_produto = id_produto;
+	public Produto(Long idProduto, String nome, String descProduto, double preco, int quantEstoque, CategoriaProduto categoriaProduto, TipoProduto tipoProduto, Ornamento ornamento) {
+		this.idProduto = idProduto;
 		this.nome = nome;
-		this.desc_produto = desc_produto;
+		this.descProduto = descProduto;
 		this.preco = preco;
-		this.quant_estoque = quant_estoque;
-		this.categoria_produto = categoria_produto;
-		this.tipo_produto = tipo_produto;
+		this.quantEstoque = quantEstoque;
+		this.categoriaProduto = categoriaProduto;
+		this.tipoProduto = tipoProduto;
 		this.ornamento = ornamento;
 	}
 
 	//Getters and Setters
-	public Long getId_produto() {
-		return id_produto;
+	public Long getIdProduto() {
+		return idProduto;
 	}
 
-	public void setId_produto(Long id_produto) {
-		this.id_produto = id_produto;
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
 	}
 
 	public String getNome() {
@@ -83,14 +82,14 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getDesc_produto() {
-		return desc_produto;
+	public String getDescProduto() {
+		return descProduto;
 	}
 
-	public void setDesc_produto(String desc_produto) {
-		this.desc_produto = desc_produto;
+	public void setDescProduto(String descProduto) {
+		this.descProduto = descProduto;
 	}
-											
+
 	public double getPreco() {
 		return preco;
 	}
@@ -99,28 +98,28 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public int getQuant_estoque() {
-		return quant_estoque;
+	public int getQuantEstoque() {
+		return quantEstoque;
 	}
 
-	public void setQuant_estoque(int quant_estoque) {
-		this.quant_estoque = quant_estoque;
+	public void setQuantEstoque(int quantEstoque) {
+		this.quantEstoque = quantEstoque;
 	}
 
-	public CategoriaProduto getCategoria_produto() {
-		return categoria_produto;
+	public CategoriaProduto getCategoriaProduto() {
+		return categoriaProduto;
 	}
 
-	public void setCategoria_produto(CategoriaProduto categoria_produto) {
-		this.categoria_produto = categoria_produto;
+	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
+		this.categoriaProduto = categoriaProduto;
 	}
 
-	public TipoProduto getTipo_produto() {
-		return tipo_produto;
+	public TipoProduto getTipoProduto() {
+		return tipoProduto;
 	}
 
-	public void setTipo_produto(TipoProduto tipo_produto) {
-		this.tipo_produto = tipo_produto;
+	public void setTipoProduto(TipoProduto tipoProduto) {
+		this.tipoProduto = tipoProduto;
 	}
 
 	public Ornamento getOrnamento() {
@@ -130,6 +129,4 @@ public class Produto {
 	public void setOrnamento(Ornamento ornamento) {
 		this.ornamento = ornamento;
 	}
-	
-	
 }

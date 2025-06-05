@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,8 +16,8 @@ public class Ornamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_ornamento", nullable = false)
-    private Long id_ornamento;
+    @Column(name = "idOrnamento", nullable = false)
+    private Long idOrnamento;
     
     @Column(name = "nome", nullable = false)
     private String nome;
@@ -27,27 +25,26 @@ public class Ornamento {
     @Column(name = "descricao", nullable = false)
     private String descricao;
     
-    @OneToMany(mappedBy= "ornamento")
-	private Set<Produto> produto;
-
+    @OneToMany(mappedBy = "ornamento")
+    private Set<Produto> produto;
 
     public Ornamento() {
     	
     }
     
-    public Ornamento(Long id_ornamento, String nome, String descricao) {
+    public Ornamento(Long idOrnamento, String nome, String descricao) {
         super();
-        this.id_ornamento = id_ornamento;
+        this.idOrnamento = idOrnamento;
         this.nome = nome;
         this.descricao = descricao;
     }
 
-    public Long getId_ornamento() {
-        return id_ornamento;
+    public Long getIdOrnamento() {
+        return idOrnamento;
     }
 
-    public void setIdOrnamento(Long id_ornamento) {
-        this.id_ornamento = id_ornamento;
+    public void setIdOrnamento(Long idOrnamento) {
+        this.idOrnamento = idOrnamento;
     }
 
     public String getNome() {
@@ -65,5 +62,4 @@ public class Ornamento {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
 }

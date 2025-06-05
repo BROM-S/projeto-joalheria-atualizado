@@ -14,7 +14,7 @@ public class CategoriaProdutoService {
 	@Autowired
 	private CategoriaProdutoRepository categoriaProdutoRepository;
 	
-	public CategoriaProduto saveCategoriaProduto( CategoriaProduto categoriaProduto) {
+	public CategoriaProduto saveCategoriaProduto(CategoriaProduto categoriaProduto) {
 		return categoriaProdutoRepository.save(categoriaProduto);
 	}
 	
@@ -22,18 +22,16 @@ public class CategoriaProdutoService {
 		return categoriaProdutoRepository.findAll();
 	}
 	
-	public CategoriaProduto getCategoriaProdutoById (Long id_categoria_produto) {
-		return categoriaProdutoRepository.findById(id_categoria_produto).orElse(null);
+	public CategoriaProduto getCategoriaProdutoById(Long idCategoriaProduto) {
+		return categoriaProdutoRepository.findById(idCategoriaProduto).orElse(null);
 	}
 	
-	public void deleteCategoriaProduto(Long id_categoria_produto) {
-		categoriaProdutoRepository.deleteById(id_categoria_produto);
+	public void deleteCategoriaProduto(Long idCategoriaProduto) {
+		categoriaProdutoRepository.deleteById(idCategoriaProduto);
 	}
 
-	 
-	 public CategoriaProduto buscarCategoriaProdutoPorId(Long id_categoria_produto) {
-	        return categoriaProdutoRepository.findById(id_categoria_produto).orElse(null);
-	    }
-
+	public CategoriaProduto buscarCategoriaProdutoPorId(Long idCategoriaProduto) {
+		return categoriaProdutoRepository.findById(idCategoriaProduto).orElse(null);
+	}
 
 }

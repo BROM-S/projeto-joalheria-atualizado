@@ -11,31 +11,27 @@ import br.com.joalheriajoiasjoia.app.repositories.TipoUsuarioRepository;
 @Service
 public class TipoUsuarioService {
 
+    @Autowired
+    private TipoUsuarioRepository tipoUsuarioRepository;
+    
+    public TipoUsuario saveTipoUsuario(TipoUsuario tipoUsuario) {
+        return tipoUsuarioRepository.save(tipoUsuario);
+    }
+    
+    public List<TipoUsuario> getAllTipoUsuario(){
+        return tipoUsuarioRepository.findAll();
+    }
+    
+    public TipoUsuario getTipoUsuarioById(Long idTipoUsuario) {
+        return tipoUsuarioRepository.findById(idTipoUsuario).orElse(null);
+    }
+    
+    public void deleteTipoUsuario(Long idTipoUsuario) {
+        tipoUsuarioRepository.deleteById(idTipoUsuario);
+    }
+     
+    public TipoUsuario buscarTipoUsuarioPorId(Long idTipoUsuario) {
+        return tipoUsuarioRepository.findById(idTipoUsuario).orElse(null);
+    }
 
-		@Autowired
-		private TipoUsuarioRepository tipoUsuarioRepository;
-		
-		public TipoUsuario saveTipoUsuario( TipoUsuario tipoUsuario) {
-			return tipoUsuarioRepository.save(tipoUsuario);
-		}
-		
-		public List<TipoUsuario> getAllTipoUsuario(){
-			return tipoUsuarioRepository.findAll();
-		}
-		
-		public TipoUsuario getTipoUsuarioById (Long id_tipo_usuario) {
-			return tipoUsuarioRepository.findById(id_tipo_usuario).orElse(null);
-		}
-		
-		public void deleteTipoUsuario(Long id_tipo_usuario) {
-			tipoUsuarioRepository.deleteById(id_tipo_usuario);
-		}
-		 
-		 public TipoUsuario buscarTipoUsuarioPorId(Long id_tipo_usuario) {
-		        return tipoUsuarioRepository.findById(id_tipo_usuario).orElse(null);
-		    }
-
-
-	}
-
-
+}

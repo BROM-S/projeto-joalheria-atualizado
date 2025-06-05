@@ -33,14 +33,14 @@ public class CategoriaProdutoController {
 		return categoriaProdutoService.getAllCategoriasProduto();
 	}
 	
-	@GetMapping("/{id_categoria_produto}")
-    public ResponseEntity<Object> buscarCategoriaProdutoPorId(@PathVariable Long id_categoria_produto){
-		CategoriaProduto categoriaProduto = categoriaProdutoService.buscarCategoriaProdutoPorId(id_categoria_produto);
+	@GetMapping("/{idCategoriaProduto}")
+    public ResponseEntity<Object> buscarCategoriaProdutoPorId(@PathVariable Long idCategoriaProduto){
+		CategoriaProduto categoriaProduto = categoriaProdutoService.buscarCategoriaProdutoPorId(idCategoriaProduto);
     
     	if(categoriaProduto != null) {
     		return ResponseEntity.ok(categoriaProduto);
     	} else {
-    		return ResponseEntity.status(404).body("Categoria com ID "+id_categoria_produto+" não foi encontrada");
+    		return ResponseEntity.status(404).body("Categoria com ID "+idCategoriaProduto+" não foi encontrada");
     	}
     
     }

@@ -20,70 +20,53 @@ import br.com.joalheriajoiasjoia.app.services.UsuarioService;
 @RequestMapping("/cadastroUsuario")
 public class UsuarioController {
 
-	@Autowired
-	private UsuarioService usuarioService;
+    @Autowired
+    private UsuarioService usuarioService;
 
-	@PostMapping
-	public Usuario createUsuario(@RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
-	}
+    @PostMapping
+    public Usuario createUsuario(@RequestBody Usuario usuario) {
+        return usuarioService.saveUsuario(usuario);
+    }
 
-	@GetMapping
-	public List<Usuario> getAllUsuarios() {
-		return usuarioService.getAllUsuarios();
-	}
+    @GetMapping
+    public List<Usuario> getAllUsuarios() {
+        return usuarioService.getAllUsuarios();
+    }
 
-	/*@GetMapping("/{id}")
-	public Cliente getCliente(@PathVariable Long id) {
-		return clienteService.getClienteById(id);
-	}*/
-	
-	@GetMapping("/{id}")
-    public ResponseEntity<Object> buscarUsuarioPorId(@PathVariable Long id_usuario){
-		Usuario usuario = usuarioService.buscarUsuarioPorId(id_usuario);
+    @GetMapping("/{idUsuario}")
+    public ResponseEntity<Object> buscarUsuarioPorId(@PathVariable Long idUsuario){
+        Usuario usuario = usuarioService.buscarUsuarioPorId(idUsuario);
     
-    	if(usuario != null) {
-    		return ResponseEntity.ok(usuario);
-    	} else {
-    		return ResponseEntity.status(404).body("Usuário com ID "+id_usuario+" não foi encontrado");
-    	}
-    
+        if(usuario != null) {
+            return ResponseEntity.ok(usuario);
+        } else {
+            return ResponseEntity.status(404).body("Usuário com ID " + idUsuario + " não foi encontrado");
+        }
     }
     
     @GetMapping("/cpf/{cpf}")
     public Usuario buscarUsuariosPorCpf(@PathVariable String cpf) {
-    	return usuarioService.buscarUsuarioPorCpf(cpf);
+        return usuarioService.buscarUsuarioPorCpf(cpf);
     }
 
-	@PutMapping
-	public Usuario editUsuario(@RequestBody Usuario usuario) {
-		return usuarioService.saveUsuario(usuario);
-	}
+    @PutMapping
+    public Usuario editUsuario(@RequestBody Usuario usuario) {
+        return usuarioService.saveUsuario(usuario);
+    }
 
-	@DeleteMapping("/{id_usuario}")
-	public void deleteUsuario(@PathVariable Long id_usuario) {
-		usuarioService.deleteUsuario(id_usuario);
-	}
-	@PostMapping("/login")
-	public Usuario login(@RequestBody Usuario loginRequest) {
-		//Chama o método de autenticação do service passando o email e senha fornecidos no login
-		//1. loginRequest.getEmail() - obtém o email enviado pelo usuário na requisição
-		//2. loginRequest.getenha() - obtém a senha enviada pelo usuário na requisição
-		//3. usuarioService.autenticarPeessoa(email, senha) verifica no banco se existe um usuário com este email e se a senha é válida
-		//4. retorna o objeto usuário autenticado, ou null caso falhe na autenticação
-		Usuario pessoa = usuarioService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha());
-		
-		//Verifica se o serviço retornou um usuário válido (autenticação bem-sucedida)
-		if(pessoa != null) {
-			//Se autenticado, retorna os dados do usuário
-			return pessoa;
-		}else {
-			//Se não autenticado, retorna null indicando falha no login
-			return null;
-		}
-	
+    @DeleteMapping("/{idUsuario}")
+    public void deleteUsuario(@PathVariable Long idUsuario) {
+        usuarioService.deleteUsuario(idUsuario);
+    }
 
+    @PostMapping("/login")
+    public Usuario login(@RequestBody Usuario loginRequest) {
+        Usuario pessoa = usuarioService.autenticarPessoa(loginRequest.getEmail(), loginRequest.getSenha());
+
+        if(pessoa != null) {
+            return pessoa;
+        } else {
+            return null;
+        }
+    }
 }
-}
-
-

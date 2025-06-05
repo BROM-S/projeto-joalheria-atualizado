@@ -19,11 +19,11 @@ public class Usuario {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_usuario", nullable = false)
-	private Long id_usuario;
+	@Column(name = "idUsuario", nullable = false)
+	private Long idUsuario;
 	
-	@Column(name = "nome_usuario", nullable = false, length = 100)
-	private String nome_usuario;
+	@Column(name = "nomeUsuario", nullable = false, length = 100)
+	private String nomeUsuario;
 	
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)
 	private String cpf;
@@ -34,16 +34,16 @@ public class Usuario {
 	@Column(name = "senha", nullable = false, unique = true)
 	private String senha;
 	
-	@Column(name = "telefone", nullable = false,  unique = false)
+	@Column(name = "telefone", nullable = false)
 	private String telefone;
 	
-	@Column(name = "dt_nascimento", unique = false)
-	private LocalDate dt_nascimento;
+	@Column(name = "dtNascimento")
+	private LocalDate dtNascimento;
 
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name = "tipo_usuario", nullable = false)
-	private TipoUsuario tipo_usuario;
+	@JoinColumn(name = "tipoUsuario", nullable = false)
+	private TipoUsuario tipoUsuario;
 	
 	
 	// Construtores
@@ -51,33 +51,33 @@ public class Usuario {
 
 	}
 
-	public Usuario(Long id_usuario, String nome_usuario, String cpf, String email, String senha, String telefone,
-			LocalDate dt_nascimento, TipoUsuario tipo_usuario) {
-		this.id_usuario = id_usuario;
-		this.nome_usuario = nome_usuario;
+	public Usuario(Long idUsuario, String nomeUsuario, String cpf, String email, String senha, String telefone,
+			LocalDate dtNascimento, TipoUsuario tipoUsuario) {
+		this.idUsuario = idUsuario;
+		this.nomeUsuario = nomeUsuario;
 		this.cpf = cpf;
 		this.email = email;
 		this.senha = senha;
 		this.telefone = telefone;
-		this.dt_nascimento = dt_nascimento;
-		this.tipo_usuario = tipo_usuario;
+		this.dtNascimento = dtNascimento;
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	//Getters e setters
-	public Long getId_usuario() {
-		return id_usuario;
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public void setId_usuario(Long id_usuario) {
-		this.id_usuario = id_usuario;
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public String getNome_usuario() {
-		return nome_usuario;
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
 
-	public void setNome_usuario(String nome_usuario) {
-		this.nome_usuario = nome_usuario;
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
 
 	public String getCpf() {
@@ -112,20 +112,19 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public LocalDate getDt_nascimento() {
-		return dt_nascimento;
+	public LocalDate getDtNascimento() {
+		return dtNascimento;
 	}
 
-	public void setDt_nascimento(LocalDate dt_nascimento) {
-		this.dt_nascimento = dt_nascimento;
+	public void setDtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 
-	public TipoUsuario getTipo_usuario() {
-		return tipo_usuario;
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
 	}
 
-	public void setTipo_usuario(TipoUsuario tipo_usuario) {
-		this.tipo_usuario = tipo_usuario;
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
-		
 }

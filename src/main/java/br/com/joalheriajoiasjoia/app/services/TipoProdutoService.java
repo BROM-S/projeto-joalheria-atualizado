@@ -14,7 +14,7 @@ public class TipoProdutoService {
 	@Autowired
 	private TipoProdutoRepository tipoProdutoRepository;
 	
-	public TipoProduto saveTipoProduto( TipoProduto tipoProduto) {
+	public TipoProduto saveTipoProduto(TipoProduto tipoProduto) {
 		return tipoProdutoRepository.save(tipoProduto);
 	}
 	
@@ -22,17 +22,15 @@ public class TipoProdutoService {
 		return tipoProdutoRepository.findAll();
 	}
 	
-	public TipoProduto getTipoProdutoById (Long id_tipo_produto) {
-		return tipoProdutoRepository.findById(id_tipo_produto).orElse(null);
+	public TipoProduto getTipoProdutoById(Long idTipoProduto) {
+		return tipoProdutoRepository.findById(idTipoProduto).orElse(null);
 	}
 	
-	public void deleteTipoProduto(Long id_tipo_produto) {
-		tipoProdutoRepository.deleteById(id_tipo_produto);
+	public void deleteTipoProduto(Long idTipoProduto) {
+		tipoProdutoRepository.deleteById(idTipoProduto);
 	}
 	 
-	 public TipoProduto buscarTipoProdutoPorId(Long id_tipo_produto) {
-	        return tipoProdutoRepository.findById(id_tipo_produto).orElse(null);
-	    }
-
-
+	public TipoProduto buscarTipoProdutoPorId(Long idTipoProduto) {
+		return tipoProdutoRepository.findById(idTipoProduto).orElse(null);
+	}
 }

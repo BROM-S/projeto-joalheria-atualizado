@@ -25,13 +25,13 @@ public class EnderecoService {
 	}
 
 	// Buscar Endereço por ID
-	public Endereco getEnderecoById(Long id_endereco) {
-		return enderecoRepository.findById(id_endereco).orElse(null);
+	public Endereco getEnderecoById(Long idEndereco) {
+		return enderecoRepository.findById(idEndereco).orElse(null);
 	}
 
 	// Deletar Endereço
-	public void deleteEndereco(Long id_endereco) {
-		enderecoRepository.deleteById(id_endereco);
+	public void deleteEndereco(Long idEndereco) {
+		enderecoRepository.deleteById(idEndereco);
 	}
 
 }

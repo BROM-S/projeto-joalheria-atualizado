@@ -2,8 +2,6 @@ package br.com.joalheriajoiasjoia.app.entities;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,53 +17,50 @@ public class TipoProduto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_tipo_produto", nullable = false)
-	private Long id_tipo_produto;
+	@Column(name = "idTipoProduto", nullable = false)
+	private Long idTipoProduto;
 	
-	@Column(name = "descricao_tipo_produto", nullable = false)
-	private String descricao_tipo_produto;
+	@Column(name = "descricaoTipoProduto", nullable = false)
+	private String descricaoTipoProduto;
 	
-	@Column(name = "nome_tipo_produto")
-	private String nome_tipo_produto;
+	@Column(name = "nomeTipoProduto")
+	private String nomeTipoProduto;
 	
-	@OneToMany(mappedBy= "tipo_produto")
+	@OneToMany(mappedBy = "tipoProduto")
 	private Set<Produto> produtos;
-
 
 	public TipoProduto() {
 		
 	}
 	
-	public TipoProduto(Long id_tipo_produto, String descricao_tipo_produto, String nome_tipo_produto) {
+	public TipoProduto(Long idTipoProduto, String descricaoTipoProduto, String nomeTipoProduto) {
 		super();
-		this.id_tipo_produto = id_tipo_produto;
-		this.descricao_tipo_produto = descricao_tipo_produto;
-		this.nome_tipo_produto = nome_tipo_produto;
+		this.idTipoProduto = idTipoProduto;
+		this.descricaoTipoProduto = descricaoTipoProduto;
+		this.nomeTipoProduto = nomeTipoProduto;
 	}
 
-	public Long getId_tipo_produto() {
-		return id_tipo_produto;
+	public Long getIdTipoProduto() {
+		return idTipoProduto;
 	}
 
-	public void setId_tipo_produto(Long id_tipo_produto) {
-		this.id_tipo_produto = id_tipo_produto;
+	public void setIdTipoProduto(Long idTipoProduto) {
+		this.idTipoProduto = idTipoProduto;
 	}
 
-	public String getDescricao_tipo_produto() {
-		return descricao_tipo_produto;
+	public String getDescricaoTipoProduto() {
+		return descricaoTipoProduto;
 	}
 
-	public void setDescricao_tipo_produto(String descricao_tipo_produto) {
-		this.descricao_tipo_produto = descricao_tipo_produto;
+	public void setDescricaoTipoProduto(String descricaoTipoProduto) {
+		this.descricaoTipoProduto = descricaoTipoProduto;
 	}
 
-	public String getNome_tipo_produto() {
-		return nome_tipo_produto;
+	public String getNomeTipoProduto() {
+		return nomeTipoProduto;
 	}
 
-	public void setNome_tipo_produto(String nome_tipo_produto) {
-		this.nome_tipo_produto = nome_tipo_produto;
+	public void setNomeTipoProduto(String nomeTipoProduto) {
+		this.nomeTipoProduto = nomeTipoProduto;
 	}
-	
-	
 }
