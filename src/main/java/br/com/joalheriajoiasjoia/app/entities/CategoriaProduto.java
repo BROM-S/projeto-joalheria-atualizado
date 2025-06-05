@@ -17,16 +17,16 @@ public class CategoriaProduto {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_categoria_produto", nullable = false)
-	private Long id_categoria_produto;
+	@Column(name = "idCategoriaProduto", nullable = false)
+	private Long idCategoriaProduto;
 	
-	@Column(name = "nome_categoria_produto", nullable = false, length = 50)
-	private String nome_categoria_produto;
+	@Column(name = "nomeCategoriaProduto", nullable = false, length = 50)
+	private String nomeCategoriaProduto;
 	
-	@Column(name = "descricao_categoria_produto", nullable = false)
-	private String descricao_categoria_produto;
+	@Column(name = "descricaoCategoriaProduto", nullable = false)
+	private String descricaoCategoriaProduto;
 	
-	@OneToMany(mappedBy = "categoria_produto")
+	@OneToMany(mappedBy = "categoriaProduto")
 	private Set<Produto> produtos;
 
 
@@ -35,36 +35,36 @@ public class CategoriaProduto {
 		
 	}
 	
-	public CategoriaProduto(Long id_categoriaProduto, String nome_categoria_produto, String descricao_categoria_produto) {
-		this.id_categoria_produto = id_categoriaProduto;
-		this.nome_categoria_produto = nome_categoria_produto;
-		this.descricao_categoria_produto = descricao_categoria_produto;
+	public CategoriaProduto(Long idCategoriaProduto, String nomeCategoriaProduto, String descricaoCategoriaProduto) {
+		this.idCategoriaProduto = idCategoriaProduto;
+		this.nomeCategoriaProduto = nomeCategoriaProduto;
+		this.descricaoCategoriaProduto = descricaoCategoriaProduto;
 	}
 
 	//Getters and Setters
 
-	public Long getid_categoria_produto() {
-		return id_categoria_produto;
+	public Long getIdCategoriaProduto() {
+		return idCategoriaProduto;
 	}
 
-	public void setId_categoriaProduto(Long id_categoria_produto) {
-		this.id_categoria_produto = id_categoria_produto;
+	public void setIdCategoriaProduto(Long idCategoriaProduto) {
+		this.idCategoriaProduto = idCategoriaProduto;
 	}
 
-	public String getNome_categoria_produto() {
-		return nome_categoria_produto;
+	public String getNomeCategoriaProduto() {
+		return nomeCategoriaProduto;
 	}
 
-	public void setNome_categoria_produto(String nome_categoria_produto) {
-		this.nome_categoria_produto = nome_categoria_produto;
+	public void setNomeCategoriaProduto(String nomeCategoriaProduto) {
+		this.nomeCategoriaProduto = nomeCategoriaProduto;
 	}
 
-	public String getDescricao_categoria_produto() {
-		return descricao_categoria_produto;
+	public String getDescricaoCategoriaProduto() {
+		return descricaoCategoriaProduto;
 	}
 
-	public void setDescricao_categoria_produto(String descricao_categoria_produto) {
-		this.descricao_categoria_produto = descricao_categoria_produto;
+	public void setDescricaoCategoriaProduto(String descricaoCategoriaProduto) {
+		this.descricaoCategoriaProduto = descricaoCategoriaProduto;
 	}
 	
 }

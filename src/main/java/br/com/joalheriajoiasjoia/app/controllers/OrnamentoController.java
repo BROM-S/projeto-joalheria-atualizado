@@ -3,14 +3,7 @@ package br.com.joalheriajoiasjoia.app.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.com.joalheriajoiasjoia.app.entities.Ornamento;
 import br.com.joalheriajoiasjoia.app.services.OrnamentoService;
@@ -21,29 +14,29 @@ public class OrnamentoController {
 
     @Autowired
     private OrnamentoService ornamentoService;
-    
+
     @PostMapping
     public Ornamento createOrnamento(@RequestBody Ornamento ornamento) {
         return ornamentoService.saveOrnamento(ornamento);
     }
-    
+
     @GetMapping
-    public List<Ornamento> getAllOrnamento(){
+    public List<Ornamento> getAllOrnamento() {
         return ornamentoService.getAllOrnamento();
     }
-    
-    @GetMapping("/{id_ornamento}")
-    public Ornamento getOrnamento(@PathVariable Long id_ornamento) {
-        return ornamentoService.getOrnamentoById(id_ornamento);
+
+    @GetMapping("/{idOrnamento}")
+    public Ornamento getOrnamento(@PathVariable Long idOrnamento) {
+        return ornamentoService.getOrnamentoById(idOrnamento);
     }
+
     @PutMapping
-    public Ornamento  editOrnamento(@RequestBody Ornamento ornamento) {
+    public Ornamento editOrnamento(@RequestBody Ornamento ornamento) {
         return ornamentoService.saveOrnamento(ornamento);
     }
-    @DeleteMapping("/{id_ornamento}")
-    public void deleteOrnamento(@PathVariable Long id_ornamento) {
-        ornamentoService.deleteOrnamento(id_ornamento);
+
+    @DeleteMapping("/{idOrnamento}")
+    public void deleteOrnamento(@PathVariable Long idOrnamento) {
+        ornamentoService.deleteOrnamento(idOrnamento);
     }
-
-
 }

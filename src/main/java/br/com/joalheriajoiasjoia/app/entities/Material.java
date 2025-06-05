@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 @Table(name = "tb_material")
 public class Material {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idMaterial", nullable = false)
