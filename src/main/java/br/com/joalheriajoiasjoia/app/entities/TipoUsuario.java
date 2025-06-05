@@ -19,13 +19,13 @@ public class TipoUsuario {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_tipo_usuario")
-	private Long id_tipo_usuario;
+	@Column(name = "idTipoUsuario")
+	private Long idTipoUsuario;
 	
-	@Column(name = "nome_tipo_usuario")
-	private String nome_tipo_usuario;
+	@Column(name = "nomeTipoUsuario")
+	private String nomeTipoUsuario;
 			
-	@OneToMany(mappedBy= "tipo_usuario")
+	@OneToMany(mappedBy = "tipoUsuario")
 	@JsonManagedReference
 	private Set<Usuario> usuario;
 
@@ -34,26 +34,25 @@ public class TipoUsuario {
 		
 	}
 	
-	public TipoUsuario(Long id_tipo_usuario, String nome_tipo_usuario) {
-		this.id_tipo_usuario = id_tipo_usuario;
-		this.nome_tipo_usuario = nome_tipo_usuario;
+	public TipoUsuario(Long idTipoUsuario, String nomeTipoUsuario) {
+		this.idTipoUsuario = idTipoUsuario;
+		this.nomeTipoUsuario = nomeTipoUsuario;
 	}
 
 	//Getters and Setters
-	public Long getId_tipo_usuario() {
-		return id_tipo_usuario;
+	public Long getIdTipoUsuario() {
+		return idTipoUsuario;
 	}
 
-	public void setId_tipo_usuario(Long id_tipo_usuario) {
-		this.id_tipo_usuario = id_tipo_usuario;
+	public void setIdTipoUsuario(Long idTipoUsuario) {
+		this.idTipoUsuario = idTipoUsuario;
 	}
 
-	public String getNome_tipo_usuario() {
-		return nome_tipo_usuario;
+	public String getNomeTipoUsuario() {
+		return nomeTipoUsuario;
 	}
 
-	public void setNome_tipo_usuario(String nome_tipo_usuario) {
-		this.nome_tipo_usuario = nome_tipo_usuario;
+	public void setNomeTipoUsuario(String nomeTipoUsuario) {
+		this.nomeTipoUsuario = nomeTipoUsuario;
 	}
-
 }

@@ -11,23 +11,22 @@ import br.com.joalheriajoiasjoia.app.repositories.OrnamentoRepository;
 @Service
 public class OrnamentoService {
 
-    
     @Autowired
-    private OrnamentoRepository OrnamentoRepository;
+    private OrnamentoRepository ornamentoRepository;
     
-    public Ornamento saveOrnamento( Ornamento ornamento) {
-        return OrnamentoRepository.save(ornamento);
+    public Ornamento saveOrnamento(Ornamento ornamento) {
+        return ornamentoRepository.save(ornamento);
     }
     
     public List<Ornamento> getAllOrnamento(){
-        return OrnamentoRepository.findAll();
+        return ornamentoRepository.findAll();
     }
     
-    public Ornamento getOrnamentoById (Long id_ornamento) {
-        return OrnamentoRepository.findById(id_ornamento).orElse(null);
+    public Ornamento getOrnamentoById(Long idOrnamento) {
+        return ornamentoRepository.findById(idOrnamento).orElse(null);
     }
     
-    public void deleteOrnamento(Long id_ornamento) {
-        OrnamentoRepository.deleteById(id_ornamento);
+    public void deleteOrnamento(Long idOrnamento) {
+        ornamentoRepository.deleteById(idOrnamento);
     }
 }

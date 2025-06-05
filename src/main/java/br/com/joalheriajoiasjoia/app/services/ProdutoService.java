@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.joalheriajoiasjoia.app.entities.Produto;
 import br.com.joalheriajoiasjoia.app.repositories.ProdutoRepository;
+
 @Service
 public class ProdutoService {
 
@@ -24,14 +25,13 @@ public class ProdutoService {
 	}
 
 	// Buscar Produto por ID
-	public Produto getProdutoById(Long id_produto) {
-		return produtoRepository.findById(id_produto).orElse(null);
+	public Produto getProdutoById(Long idProduto) {
+		return produtoRepository.findById(idProduto).orElse(null);
 	}
 
 	// Deletar Produto
-	public void deleteProduto(Long id_produto) {
-		produtoRepository.deleteById(id_produto);
+	public void deleteProduto(Long idProduto) {
+		produtoRepository.deleteById(idProduto);
 	}
 
 }
-

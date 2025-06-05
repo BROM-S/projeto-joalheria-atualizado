@@ -14,8 +14,8 @@ public class Endereco {
 	//Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_endereco")
-	private Long id_endereco;
+	@Column(name = "idEndereco")
+	private Long idEndereco;
 	
 	@Column(name = "cep", nullable = false, length = 8)
 	private String cep;
@@ -26,8 +26,8 @@ public class Endereco {
 	@Column(name = "cidade", nullable = false)
 	private String cidade;
 	
-	@Column(name = "numero_casa", nullable = false)
-	private String numero_casa;
+	@Column(name = "numeroCasa", nullable = false)
+	private String numeroCasa;
 	
 	@Column(name = "bairro", nullable = false)
 	private String bairro;
@@ -43,25 +43,24 @@ public class Endereco {
 		
 	}
 	
-	public Endereco(Long id_endereco, String cep, String estado, String cidade, String numero_casa, String bairro, String rua, String complemento) {
-		this.id_endereco = id_endereco;
+	public Endereco(Long idEndereco, String cep, String estado, String cidade, String numeroCasa, String bairro, String rua, String complemento) {
+		this.idEndereco = idEndereco;
 		this.cep = cep;
 		this.estado = estado;
 		this.cidade = cidade;
-		this.numero_casa = numero_casa;
+		this.numeroCasa = numeroCasa;
 		this.bairro = bairro;
 		this.rua = rua;
 		this.complemento = complemento;
 	}
 
-	
 	//Getters and Setters
-	public Long getId_endereco() {
-		return id_endereco;
+	public Long getIdEndereco() {
+		return idEndereco;
 	}
 
-	public void setId_endereco(Long id_endereco) {
-		this.id_endereco = id_endereco;
+	public void setIdEndereco(Long idEndereco) {
+		this.idEndereco = idEndereco;
 	}
 
 	public String getCep() {
@@ -88,12 +87,12 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public String getNumero_casa() {
-		return numero_casa;
+	public String getNumeroCasa() {
+		return numeroCasa;
 	}
 
-	public void setNumero_casa(String numero_casa) {
-		this.numero_casa = numero_casa;
+	public void setNumeroCasa(String numeroCasa) {
+		this.numeroCasa = numeroCasa;
 	}
 
 	public String getBairro() {
@@ -111,13 +110,12 @@ public class Endereco {
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	
-	public String getcomplemento() {
+
+	public String getComplemento() {
 		return complemento;
 	}
 	
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
 }

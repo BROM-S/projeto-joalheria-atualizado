@@ -11,11 +11,10 @@ import br.com.joalheriajoiasjoia.app.repositories.MaterialRepository;
 @Service
 public class MaterialService {
 
-    
     @Autowired
     private MaterialRepository materialRepository;
     
-    public Material saveMaterial( Material material) {
+    public Material saveMaterial(Material material) {
         return materialRepository.save(material);
     }
     
@@ -23,13 +22,12 @@ public class MaterialService {
         return materialRepository.findAll();
     }
     
-    public Material getMaterialById (Long idMaterial) {
+    public Material getMaterialById(Long idMaterial) {
         return materialRepository.findById(idMaterial).orElse(null);
     }
     
     public void deleteMaterial(Long idMaterial) {
         materialRepository.deleteById(idMaterial);
     }
-
 
 }

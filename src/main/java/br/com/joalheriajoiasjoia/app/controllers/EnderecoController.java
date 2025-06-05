@@ -30,14 +30,14 @@ public class EnderecoController {
 		return enderecoService.getAllEndereco();
 	}
 
-	@GetMapping("/{id_endereco}")
-	public Endereco getEndereco(@PathVariable Long id_endereco) {
-		return enderecoService.getEnderecoById(id_endereco);
+	@GetMapping("/{idEndereco}")
+	public Endereco getEndereco(@PathVariable Long idEndereco) {
+		return enderecoService.getEnderecoById(idEndereco);
 	}
 
-	@DeleteMapping("/{id_endereco}")
-	public void deleteEndereco(@PathVariable Long id_endereco) {
-		enderecoService.deleteEndereco(id_endereco);
+	@DeleteMapping("/{idEndereco}")
+	public void deleteEndereco(@PathVariable Long idEndereco) {
+		enderecoService.deleteEndereco(idEndereco);
 	}
 
 }
