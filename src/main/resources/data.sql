@@ -25,8 +25,8 @@ INSERT IGNORE INTO tb_ornamento (id_ornamento, descricao, nome) VALUES
 
 -- Colocando 5 clientes ja cadastrados 
 INSERT IGNORE INTO tb_usuario (id_usuario, nome_usuario, cpf, email, senha,  telefone, dt_nascimento, tipo_usuario)VALUES
-(1, 'Khallil','47456147896','khalli@gmail.com','12345','996141865','1999-02-05','Cliente',),
-(2, 'Gariella','45678468168','gabi@gmail.com','23451','997627706','1999-08-06','Cliente',),
-(3, 'Rafaela','45678912465','rafa@gmail.com','34512','998756423','2001-01-25','Cliente',),
-(4, 'Agarra','45236688971','agarra@gmail.com','45123','994788721','2016-11-11','Cliente',),
-(5, 'Jullia','45887896591','julia@gmail.com','51234','992143571','2003-7-19','Cliente',);
+(1, 'Khallil','47456147896','khalli@gmail.com','12345','996141865','1999-02-05','Cliente'),
+(2, 'Gariella','45678468168','gabi@gmail.com','23451','997627706','1999-08-06','Cliente'),
+(3, 'Rafaela','45678912465','rafa@gmail.com','34512','998756423','2001-01-25','Cliente'),
+(4, 'Agarra','45236688971','agarra@gmail.com','45123','994788721','2016-11-11','Cliente'),
+(5, 'Jullia','45887896591','julia@gmail.com','51234','992143571','2003-7-19','Cliente');
