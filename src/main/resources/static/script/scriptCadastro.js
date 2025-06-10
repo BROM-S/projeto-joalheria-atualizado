@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	form.addEventListener("submit", async (event) => {
 		event.preventDefault();
 
-		const nome_usuario = document.getElementById("nome_usuario").value;
+		const nomeUsuario = document.getElementById("nomeUsuario").value;
 		const cpf = document.getElementById("cpf").value;
 		const email = document.getElementById("email").value;
 		const senha = document.getElementById("senha").value;
 		const telefone = document.getElementById("telefone").value;
-		const dt_nascimento = document.getElementById("dt_nascimento").value;
+		const dtNascimento = document.getElementById("dt_nascimento").value;
 
 		try {
 
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 					"Content-Type": "application/json"
 				},
 				body: JSON.stringify({
-					nome_usuario,
+					nomeUsuario,
 					cpf,
 					telefone,
 					email,
 					senha,
-					dt_nascimento,
+					dtNascimento,
 					tipo_usuario: {
 						id_tipo_usuario: 2
 					}

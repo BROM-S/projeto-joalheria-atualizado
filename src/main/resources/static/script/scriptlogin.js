@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(usuario => {
                 alert('Login realizado com sucesso! Bem-vindo, ' + usuario.nome);
                 // Aqui você pode redirecionar para a página de perfil, por exemplo:
-                window.location.href = 'perfilusuario.html';
+                window.location.href = 'perfilUsuario.html';
                 // Também pode armazenar dados no localStorage/sessionStorage, se quiser
                 localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
             })
