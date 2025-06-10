@@ -184,50 +184,34 @@ header {
   font-size: 30px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-.products, .categories {
+.categories {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 5%;
+  align-items: center;
+  gap: 40px; /* espaço entre as categorias */
+  flex-wrap: wrap; /* se a tela for pequena, quebra para baixo */
+  margin-top: 20px;
 }
-.product, .category {
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
+
+.category {
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
 }
 
-.product:hover, .category:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.category img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
-.product img, .category img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.product:hover img, .category:hover img {
+.category img:hover {
   transform: scale(1.1);
 }
 
-.product h3, .category h3 {
-  font-size: 1.0rem;
-  margin: 10px 0;
-  color: #333;
+.category a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.product p {
-  color: #28a745;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
 footer {
   background-color: #f8f9fa;
   font-size: 1rem;
