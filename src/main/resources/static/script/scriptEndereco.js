@@ -14,13 +14,13 @@ document.getElementById("cep").addEventListener("input", async function(){
 				return;
 			}
 			
-			document.getElementById("rua").value = dados.logradouro;
+			document.getElementById("rua").value = dados.rua;
 			document.getElementById("bairro").value = dados.bairro;
-			document.getElementById("cidade").value = dados.localidade;
+			document.getElementById("cidade").value = dados.cidade;
 			document.getElementById("estado").value = dados.estado;
 			document.getElementById("complemento").value = dados.complemento;
 			document.getElementById("cep").value = dados.cep;
-			document.getElementById("numero_casa").value = dados.numero_casa;
+			document.getElementById("numeroCasa").value = dados.numeroCasa;
 		}	catch(error){
 			alert("Erro ao buscar o endereço: " + error.message);
 		}
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 		const cep = document.getElementById("cep").value;
 		const estado = document.getElementById("estado").value;
 		const cidade = document.getElementById("cidade").value;
-		const numero_casa = document.getElementById("numero_casa").value;
+		const numeroCasa = document.getElementById("numeroCasa").value;
 		const bairro = document.getElementById("bairro").value;
         const rua = document.getElementById("rua").value;
 		const complemento = document.getElementById("complemento").value;
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 					cep,
 					estado,
 					cidade,
-					numero_casa,
+					numeroCasa,
 					bairro,
                     rua,
 					complemento

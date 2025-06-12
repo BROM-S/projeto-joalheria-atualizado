@@ -8,48 +8,38 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 
 	const nomeUsuario = document.getElementById('nomeUsuario').value;
 	const email = document.getElementById('email').value;
-    const tel = document.getElementById('tel').value;
+    const telefone = document.getElementById('telefone').value;
     const cpf = document.getElementById('cpf').value;
     const dtNascimento = document.getElementById('dtNascimento').value;
     const senha = document.getElementById('senha').value
 
 	try{ 
 	// Enviar para a API
-	fetch('http://localhost:8080/cadastrousuario', {
+	fetch('http://localhost:8080/cadastroUsuario', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(
 			{ 
-				nome_usuario: nomeUsuario, 
-				email: email,
-                tel: tel,
-                cpf: cpf,
-                dt_nascimento: dt_nascimento,
-                senha: senha
+				nomeUsuario: nomeUsuario, 
+				email,
+                telefone,
+                cpf,
+                dtNascimento,
+                senha,
+				tipoUsuario:{
+					idTipoUsuario:2
+				}
 
 			})
 	});
 	
-	then(response => {
-		  if (response.ok) {
-	        return response.json();
-		} else {
-	        throw new Error('Erro ao cadastrar usuário');
-	                }
-	 })
-	      .then(data => {
-	                    alert('Usuário cadastrado com sucesso!\nNomeUsuario: ' + data.nomeUsuario);
-	                    window.location.href = 'index.html';
-	                })
-
-
 	  if (!response.ok) {
 	      throw new Error('Erro ao cadastrar pessoa');
 	  }
 
 	            const data = await response.json();
 
-	       localStorage.setItem('pessoaId', data.idUsuario); 
+	       localStorage.setItem('idUsuario', data.idUsuario); 
 	       window.location.href = './cadastroendereco.html';
 	
 	} catch(error){
