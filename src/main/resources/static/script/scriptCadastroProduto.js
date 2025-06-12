@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", () =>{
 		event.preventDefault();
 		
 		const nome = document.getElementById("nome").value;
-		const desc_produto = document.getElementById("desc_produto").value;
+		const descProduto = document.getElementById("descProduto").value;
 		const preco = document.getElementById("preco").value;
-		const quant_estoque = document.getElementById("quant_estoque").value;
-		const categoria_produto = (document.getElementById("categoria_produto").value);
-		const tipo_produto = (document.getElementById("tipo_produto").value);
+		const quantEstoque= document.getElementById("quantEstoque").value;
+		const tipoProduto = (document.getElementById("tipoProduto").value);
 		const ornamento =(document.getElementById("ornamento".value));
 		
 		try {
@@ -22,15 +21,15 @@ document.addEventListener("DOMContentLoaded", () =>{
 				},
 				body: JSON.stringify({
 					nome,
-					desc_produto,
+					descProduto,
 					preco,
-					quant_estoque,
+					quantEstoque,
 					ornamento,
 					categoria_produto: {
 					                   id_produto: categoria_produto
 					               }, 
 					tipo_produto: {
-					                   id_produto: tipo_produto
+					                   id_produto: tipoProduto
 					               }
 				}),
 			});

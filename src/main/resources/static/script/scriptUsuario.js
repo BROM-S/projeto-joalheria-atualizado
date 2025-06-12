@@ -6,11 +6,11 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 	        event.preventDefault();
 
 
-	const nome_usuario = document.getElementById('nome_usuario').value;
+	const nomeUsuario = document.getElementById('nomeUsuario').value;
 	const email = document.getElementById('email').value;
     const tel = document.getElementById('tel').value;
     const cpf = document.getElementById('cpf').value;
-    const dt_nascimento = document.getElementById('dt_nascimento').value;
+    const dtNascimento = document.getElementById('dtNascimento').value;
     const senha = document.getElementById('senha').value
 
 	try{ 
@@ -20,7 +20,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(
 			{ 
-				nome_usuario: nome_usuario, 
+				nome_usuario: nomeUsuario, 
 				email: email,
                 tel: tel,
                 cpf: cpf,
@@ -38,7 +38,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(e) {
 	                }
 	 })
 	      .then(data => {
-	                    alert('Usuário cadastrado com sucesso!\nNomeUsuario: ' + data.nome_usuario);
+	                    alert('Usuário cadastrado com sucesso!\nNomeUsuario: ' + data.nomeUsuario);
 	                    window.location.href = 'index.html';
 	                })
 
