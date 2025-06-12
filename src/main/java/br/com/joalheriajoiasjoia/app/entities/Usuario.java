@@ -19,10 +19,10 @@ public class Usuario {
 	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idUsuario", nullable = false)
+	@Column(name = "id_usuario", nullable = false)
 	private Long idUsuario;
 	
-	@Column(name = "nomeUsuario", nullable = false, length = 100)
+	@Column(name = "nome_usuario", nullable = false, length = 100)
 	private String nomeUsuario;
 	
 	@Column(name = "cpf", nullable = false, length = 11, unique = true)
@@ -37,12 +37,12 @@ public class Usuario {
 	@Column(name = "telefone", nullable = false)
 	private String telefone;
 	
-	@Column(name = "dtNascimento")
+	@Column(name = "dt_nascimento")
 	private LocalDate dtNascimento;
 
 	@ManyToOne
 	@JsonBackReference
-	@JoinColumn(name = "tipoUsuario", nullable = false)
+	@JoinColumn(name = "tipo_usuario", nullable = false)
 	private TipoUsuario tipoUsuario;
 	
 	
