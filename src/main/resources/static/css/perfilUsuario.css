@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-image: url(../img/fundoPedras.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 36px;
+  color: #686766c6;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #8d6d50b3;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 20px;
+  color: #4c4743;
+  margin-top: 25px;
+}
+
+p {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+img {
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 3px solid #8d6d50b3;
+  width: 120px;
+  height: 120px;
+}
+
+.perfil-info,
+.sobre,
+.acoes {
+  margin-top: 25px;
+}
+
+.acoes a {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 10px 20px;
+  background-color: #bafe1e;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 8px; /* ponta levemente circular */
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.acoes a:hover {
+  background-color: #e3bf52;
+  transform: scale(1.03); /* pequeno zoom ao passar o mouse */
+}
+
+@keyframes pulsar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .acoes a {
+    font-size: 13px;
+    padding: 6px 12px;
+    margin: 6px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
